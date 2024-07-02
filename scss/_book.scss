@@ -1,0 +1,64 @@
+/**
+ * Book
+ */
+
+.book {
+  position: relative;
+  width: 100%; // 全幅のうち60vw/30vw(モバイル/デスクトップ)をpageとして使用
+  height: 112vw; // 幅60vwに対しアスペクト比 5:7 (高さ84vw) だが、これにflip幅を加算して4/3を乗じる
+  overflow: hidden;
+
+  @media (min-width: $breakpointMd) {
+    height: 56vw; // 幅30vwに対しアスペクト比 5:7  (高さ42vw) だが、これにflip幅を加算して4/3を乗じる
+  }
+
+  &__pages {
+    position: absolute;
+    top: 14vw;
+    right: min(20vw, 180px); // 幅60vwのpageを中央寄せ
+    bottom: 14vw;
+    width: min(120vw, 1080px); // 画面幅900px時に最大1080px
+    height: 84vw;
+    background-color: #e0e0e0;
+
+    @media (min-width: $breakpointMd) {
+      top: 7vw;
+      right: min(35vw, 420px); // 幅30vwのpageを中央寄せ
+      bottom: 7vw;
+      width: min(60vw, 720px); // 画面幅1200px時に最大720px
+      height: 42vw;
+    }
+
+    @media (min-width: $breakpointLg) {
+      right: calc(50% - min(30vw, 360px)); // 全体を中央寄せ
+    }
+  }
+
+  &__page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    [data-index="1"] & {
+      background-color: rgba(255, 255, 0, 0.3);
+    }
+
+    [data-index="2"] & {
+      background-color: rgba(0, 255, 255, 0.3);
+    }
+
+    [data-index="3"] & {
+      background-color: rgba(255, 0, 255, 0.3);
+    }
+  }
+}

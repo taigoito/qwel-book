@@ -58,3 +58,83 @@ button, input, select, textarea {
 /*
  * Section
  */
+.footer, .header {
+  width: min(100%, 75rem);
+  margin: auto;
+  padding: 0 clamp(0.75rem, 2%, 1.5rem);
+}
+
+.footer__inner, .header__inner {
+  padding: 3rem 0;
+}
+
+.header__inner {
+  border-bottom: 1px solid #999;
+  text-align: center;
+}
+
+.footer__inner {
+  border-top: 1px solid #999;
+  text-align: center;
+}
+
+/**
+ * Book
+ */
+.book {
+  position: relative;
+  width: 100%;
+  height: 112vw;
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .book {
+    height: 56vw;
+  }
+}
+.book__pages {
+  position: absolute;
+  top: 14vw;
+  right: min(20vw, 180px);
+  bottom: 14vw;
+  width: min(120vw, 1080px);
+  height: 84vw;
+  background-color: #e0e0e0;
+}
+@media (min-width: 900px) {
+  .book__pages {
+    top: 7vw;
+    right: min(35vw, 420px);
+    bottom: 7vw;
+    width: min(60vw, 720px);
+    height: 42vw;
+  }
+}
+@media (min-width: 1200px) {
+  .book__pages {
+    right: calc(50% - min(30vw, 360px));
+  }
+}
+.book__page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+.book__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+[data-index="1"] .book__content {
+  background-color: rgba(255, 255, 0, 0.3);
+}
+[data-index="2"] .book__content {
+  background-color: rgba(0, 255, 255, 0.3);
+}
+[data-index="3"] .book__content {
+  background-color: rgba(255, 0, 255, 0.3);
+}
