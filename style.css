@@ -84,30 +84,29 @@ button, input, select, textarea {
 .book {
   position: relative;
   width: 100%;
-  height: 112vw;
+  height: min(112vw, 1344px);
   overflow: hidden;
 }
 @media (min-width: 900px) {
   .book {
-    height: 56vw;
+    height: min(56vw, 672px);
   }
 }
 .book__pages {
   position: absolute;
-  top: 14vw;
+  top: 0;
   right: min(20vw, 180px);
-  bottom: 14vw;
+  bottom: 0;
   width: min(120vw, 1080px);
-  height: 84vw;
+  height: min(84vw, 1008px);
+  margin: auto;
   background-color: #e0e0e0;
 }
 @media (min-width: 900px) {
   .book__pages {
-    top: 7vw;
     right: min(35vw, 420px);
-    bottom: 7vw;
     width: min(60vw, 720px);
-    height: 42vw;
+    height: min(42vw, 504px);
   }
 }
 @media (min-width: 1200px) {
@@ -137,4 +136,87 @@ button, input, select, textarea {
 }
 [data-index="3"] .book__content {
   background-color: rgba(255, 0, 255, 0.3);
+}
+.book__canvas {
+  position: absolute;
+  top: 0;
+  right: min(20vw, 180px);
+  width: min(120vw, 1080px);
+  height: 100%;
+}
+@media (min-width: 900px) {
+  .book__canvas {
+    right: min(35vw, 420px);
+    width: min(60vw, 720px);
+  }
+}
+@media (min-width: 1200px) {
+  .book__canvas {
+    right: calc(50% - min(30vw, 360px));
+  }
+}
+.book__prev, .book__next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+  border: 0;
+  background-color: transparent;
+  color: #3399cc;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+}
+.book__prev:hover, .book__next:hover {
+  color: #85c2e0;
+}
+.book__prev {
+  left: min(5vw, 45px);
+}
+@media (min-width: 900px) {
+  .book__prev {
+    left: min(20vw, 180px);
+  }
+}
+.book__next {
+  right: min(5vw, 45px);
+}
+@media (min-width: 900px) {
+  .book__next {
+    right: min(20vw, 180px);
+  }
+}
+
+/**
+ * Icon
+ */
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: hidden;
+  fill: currentColor;
+}
+
+.icon__cnt {
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  fill: inherit;
+  pointer-events: none;
+  transform: translateX(0);
+  -ms-transform: translate(0.5px, -0.3px);
+}
+
+.icon--m {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon--l {
+  width: 4.5rem;
+  height: 4.5rem;
 }

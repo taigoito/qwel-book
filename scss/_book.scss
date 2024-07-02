@@ -2,31 +2,33 @@
  * Book
  */
 
+$linkColor:      #3399cc;
+$linkHoverColor: #85c2e0;
+
 .book {
   position: relative;
   width: 100%; // 全幅のうち60vw/30vw(モバイル/デスクトップ)をpageとして使用
-  height: 112vw; // 幅60vwに対しアスペクト比 5:7 (高さ84vw) だが、これにflip幅を加算して4/3を乗じる
+  height: min(112vw, 1344px); // 幅60vwに対しアスペクト比 5:7 (高さ84vw) だが、これにflip幅を加算して4/3を乗じる
   overflow: hidden;
 
   @media (min-width: $breakpointMd) {
-    height: 56vw; // 幅30vwに対しアスペクト比 5:7  (高さ42vw) だが、これにflip幅を加算して4/3を乗じる
+    height: min(56vw, 672px); // 幅30vwに対しアスペクト比 5:7  (高さ42vw) だが、これにflip幅を加算して4/3を乗じる
   }
 
   &__pages {
     position: absolute;
-    top: 14vw;
+    top: 0;
     right: min(20vw, 180px); // 幅60vwのpageを中央寄せ
-    bottom: 14vw;
+    bottom: 0;
     width: min(120vw, 1080px); // 画面幅900px時に最大1080px
-    height: 84vw;
+    height: min(84vw, 1008px);
+    margin: auto;
     background-color: #e0e0e0;
 
     @media (min-width: $breakpointMd) {
-      top: 7vw;
       right: min(35vw, 420px); // 幅30vwのpageを中央寄せ
-      bottom: 7vw;
       width: min(60vw, 720px); // 画面幅1200px時に最大720px
-      height: 42vw;
+      height: min(42vw, 504px);
     }
 
     @media (min-width: $breakpointLg) {
@@ -59,6 +61,58 @@
 
     [data-index="3"] & {
       background-color: rgba(255, 0, 255, 0.3);
+    }
+  }
+
+  &__canvas {
+    position: absolute;
+    top: 0;
+    right: min(20vw, 180px); // pagesに合わせる
+    width: min(120vw, 1080px);; // pagesに合わせる
+    height: 100%; // 112vw / 56vw = モバイル / デスクトップ
+
+    @media (min-width: $breakpointMd) {
+      right: min(35vw, 420px);
+      width: min(60vw, 720px);
+    }
+
+    @media (min-width: $breakpointLg) {
+      right: calc(50% - min(30vw, 360px));
+    }
+  }
+  
+  &__prev, &__next{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+    border: 0;
+    background-color: transparent;
+    color: $linkColor;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+
+    &:hover {
+      color: $linkHoverColor;
+    }
+  }
+
+  &__prev {
+    left: min(5vw, 45px);
+
+    @media (min-width: $breakpointMd) {
+      left: min(20vw, 180px);
+    }
+  }
+
+  &__next {
+    right: min(5vw, 45px);
+
+    @media (min-width: $breakpointMd) {
+      right: min(20vw, 180px);
     }
   }
 }
