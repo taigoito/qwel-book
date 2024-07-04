@@ -99,7 +99,7 @@ button, input, select, textarea {
   bottom: 0;
   z-index: 1;
   width: min(120vw, 1080px);
-  height: min(84vw, 1008px);
+  height: min(84vw, 756px);
   margin: auto;
   background-color: #e0e0e0;
 }
