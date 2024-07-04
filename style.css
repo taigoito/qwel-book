@@ -105,14 +105,9 @@ button, input, select, textarea {
 }
 @media (min-width: 900px) {
   .book__pages {
-    right: min(35vw, 420px);
+    right: calc(50% - min(15vw, 180px));
     width: min(60vw, 720px);
     height: min(42vw, 504px);
-  }
-}
-@media (min-width: 1200px) {
-  .book__pages {
-    right: calc(50% - min(30vw, 360px));
   }
 }
 .book__page {
@@ -149,13 +144,8 @@ button, input, select, textarea {
 }
 @media (min-width: 900px) {
   .book__canvas {
-    right: min(33.5vw, 402px);
+    right: calc(50% - min(16.5vw, 198px));
     width: min(63vw, 756px);
-  }
-}
-@media (min-width: 1200px) {
-  .book__canvas {
-    right: calc(50% - min(31.5vw, 378px));
   }
 }
 .book__prev, .book__next {
@@ -166,6 +156,7 @@ button, input, select, textarea {
   width: 3rem;
   height: 3rem;
   margin: auto;
+  padding: 0;
   border: 0;
   background-color: transparent;
   color: #3399cc;
@@ -181,7 +172,7 @@ button, input, select, textarea {
 }
 @media (min-width: 900px) {
   .book__prev {
-    left: min(20vw, 180px);
+    left: 27.5vw;
   }
 }
 .book__next {
@@ -189,7 +180,7 @@ button, input, select, textarea {
 }
 @media (min-width: 900px) {
   .book__next {
-    right: min(20vw, 180px);
+    right: 27.5vw;
   }
 }
 

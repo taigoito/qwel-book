@@ -27,13 +27,9 @@ $linkHoverColor: #85c2e0;
     background-color: #e0e0e0;
 
     @media (min-width: $breakpointMd) {
-      right: min(35vw, 420px); // 幅30vwのpageを中央寄せ
+      right: calc(50% - min(15vw, 180px)); // 右ページ全体を中央寄せ
       width: min(60vw, 720px); // 画面幅1200px時に最大720px
       height: min(42vw, 504px);
-    }
-
-    @media (min-width: $breakpointLg) {
-      right: calc(50% - min(30vw, 360px)); // 全体を中央寄せ
     }
   }
 
@@ -75,12 +71,8 @@ $linkHoverColor: #85c2e0;
     height: 100%; // 112vw / 56vw = モバイル / デスクトップ
 
     @media (min-width: $breakpointMd) {
-      right: min(33.5vw, 402px); // pages - 1.5vw (表紙描画分)
+      right: calc(50% - min(16.5vw, 198px)); // 右ページ全体を中央寄せ
       width: min(63vw, 756px); // pages + 1.5vw * 2 (表紙描画分)
-    }
-
-    @media (min-width: $breakpointLg) {
-      right: calc(50% - min(31.5vw, 378px));
     }
   }
   
@@ -92,6 +84,7 @@ $linkHoverColor: #85c2e0;
     width: 3rem;
     height: 3rem;
     margin: auto;
+    padding: 0;
     border: 0;
     background-color: transparent;
     color: $linkColor;
@@ -108,7 +101,7 @@ $linkHoverColor: #85c2e0;
     left: min(5vw, 45px);
 
     @media (min-width: $breakpointMd) {
-      left: min(20vw, 180px);
+      left: 27.5vw;
     }
   }
 
@@ -116,7 +109,7 @@ $linkHoverColor: #85c2e0;
     right: min(5vw, 45px);
 
     @media (min-width: $breakpointMd) {
-      right: min(20vw, 180px);
+      right: 27.5vw;
     }
   }
 }
