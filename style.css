@@ -97,6 +97,7 @@ button, input, select, textarea {
   top: 0;
   right: min(20vw, 180px);
   bottom: 0;
+  z-index: 1;
   width: min(120vw, 1080px);
   height: min(84vw, 1008px);
   margin: auto;
@@ -117,7 +118,8 @@ button, input, select, textarea {
 .book__page {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 50%;
+  z-index: 10;
   width: 50%;
   height: 100%;
 }
@@ -129,36 +131,38 @@ button, input, select, textarea {
   height: 100%;
 }
 [data-index="1"] .book__content {
-  background-color: rgba(255, 255, 0, 0.3);
+  background-color: #ff8;
 }
 [data-index="2"] .book__content {
-  background-color: rgba(0, 255, 255, 0.3);
+  background-color: #8ff;
 }
 [data-index="3"] .book__content {
-  background-color: rgba(255, 0, 255, 0.3);
+  background-color: #f8f;
 }
 .book__canvas {
   position: absolute;
   top: 0;
-  right: min(20vw, 180px);
-  width: min(120vw, 1080px);
+  right: min(17vw, 153px);
+  z-index: 100;
+  width: min(126vw, 1134px);
   height: 100%;
 }
 @media (min-width: 900px) {
   .book__canvas {
-    right: min(35vw, 420px);
-    width: min(60vw, 720px);
+    right: min(33.5vw, 402px);
+    width: min(63vw, 756px);
   }
 }
 @media (min-width: 1200px) {
   .book__canvas {
-    right: calc(50% - min(30vw, 360px));
+    right: calc(50% - min(31.5vw, 378px));
   }
 }
 .book__prev, .book__next {
   position: absolute;
   top: 0;
   bottom: 0;
+  z-index: 110;
   width: 3rem;
   height: 3rem;
   margin: auto;

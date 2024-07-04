@@ -20,6 +20,7 @@ $linkHoverColor: #85c2e0;
     top: 0;
     right: min(20vw, 180px); // 幅60vwのpageを中央寄せ
     bottom: 0;
+    z-index: 1;
     width: min(120vw, 1080px); // 画面幅900px時に最大1080px
     height: min(84vw, 1008px);
     margin: auto;
@@ -39,7 +40,8 @@ $linkHoverColor: #85c2e0;
   &__page {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 50%; // flipの際右側からコンテンツが現れる
+    z-index: 10;
     width: 50%;
     height: 100%;
   }
@@ -52,32 +54,33 @@ $linkHoverColor: #85c2e0;
     height: 100%;
 
     [data-index="1"] & {
-      background-color: rgba(255, 255, 0, 0.3);
+      background-color: #ff8;
     }
 
     [data-index="2"] & {
-      background-color: rgba(0, 255, 255, 0.3);
+      background-color: #8ff;
     }
 
     [data-index="3"] & {
-      background-color: rgba(255, 0, 255, 0.3);
+      background-color: #f8f;
     }
   }
 
   &__canvas {
     position: absolute;
     top: 0;
-    right: min(20vw, 180px); // pagesに合わせる
-    width: min(120vw, 1080px);; // pagesに合わせる
+    right: min(17vw, 153px); // pages - 3vw (表紙描画分)
+    z-index: 100;
+    width: min(126vw, 1134px); // pages + 3vw * 2 (表紙描画分)
     height: 100%; // 112vw / 56vw = モバイル / デスクトップ
 
     @media (min-width: $breakpointMd) {
-      right: min(35vw, 420px);
-      width: min(60vw, 720px);
+      right: min(33.5vw, 402px); // pages - 1.5vw (表紙描画分)
+      width: min(63vw, 756px); // pages + 1.5vw * 2 (表紙描画分)
     }
 
     @media (min-width: $breakpointLg) {
-      right: calc(50% - min(30vw, 360px));
+      right: calc(50% - min(31.5vw, 378px));
     }
   }
   
@@ -85,6 +88,7 @@ $linkHoverColor: #85c2e0;
     position: absolute;
     top: 0;
     bottom: 0;
+    z-index: 110;
     width: 3rem;
     height: 3rem;
     margin: auto;
