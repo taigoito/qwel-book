@@ -179,7 +179,7 @@ button, input, select, textarea {
 }
 @media (min-width: 900px) {
   .book__prev {
-    left: 27.5vw;
+    left: 330px;
   }
 }
 .book__next {
@@ -187,7 +187,7 @@ button, input, select, textarea {
 }
 @media (min-width: 900px) {
   .book__next {
-    right: 27.5vw;
+    right: 330px;
   }
 }
 
